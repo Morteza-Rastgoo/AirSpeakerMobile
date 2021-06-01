@@ -21,7 +21,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:appcompat-v7:21.+'
     compile files('libs/base64-2.3.8.jar')
     compile files('libs/bcprov-ext-jdk16-1.46.jar')
     compile files('libs/jmdns-3.4.0.jar')
