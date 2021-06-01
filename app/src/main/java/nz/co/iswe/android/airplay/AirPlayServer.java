@@ -7,7 +7,6 @@ import android.util.Log;
 import com.fenggit.util.Constants;
 import com.fenggit.util.LogManager;
 
-import org.apache.http.conn.util.InetAddressUtils;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelHandler;
 import org.jboss.netty.channel.group.ChannelGroup;
@@ -240,7 +239,7 @@ public class AirPlayServer implements Runnable {
                 network = networks.nextElement();
                 for (inets = network.getInetAddresses(); inets.hasMoreElements();) {
                     inetAddress = inets.nextElement();
-                    if (!inetAddress.isLoopbackAddress() && InetAddressUtils.isIPv4Address(inetAddress.getHostAddress())) {
+                    if (!inetAddress.isLoopbackAddress() && inetAddress instanceof Inet4Address) {
 
                         return inetAddress;
                     }
